@@ -1,0 +1,123 @@
+<!DOCTYPE HTML>
+<!--
+	Dimension by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Dimension by HTML5 UP</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<div class="content">
+							<div class="inner">
+								<h1>WiraProject</h1>
+								<p>WiraProject is the concept we developed to bring our creative projects together into a single network, including movies, apps, websites, and much more.</p>
+							</div>
+						</div>
+						<nav>
+							<ul>
+								<li><a href="#about">ABOUT</a></li>
+								<li><a href="#copyright">COPYRIGHT</a></li>
+								<li><a href="#contact">CONTACT US</a></li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Main -->
+					<div id="main">
+							<article id="about">
+								<h2 class="major">About</h2>
+								<span class="image main"><img src="images/about.jpg" alt="" /></span>
+								<p><b>About Us</b></p>
+								<p>WiraProject is a concept we came up with to bring our creative projects together into one network, including movies, apps, websites, and much more. We just decided to create something fun, and that’s how the idea was born.</p>
+								<p>It all started as a fun hobby, but we quickly realized it could be something bigger. We enjoyed working together on projects, so we decided to take the idea further. WiraProject isn’t just about the projects — it’s about being part of a cool team, sharing ideas, and supporting each other.</p>
+								<p><b>Our Mission</b></p>
+								<p>We want to create a space where people can come together, share ideas, and work on awesome projects. It’s a place where anyone can bring their ideas to life, whether it’s a movie, app, or website.</p>
+								<p><b>Our Team</b></p>
+								<p>We’re just a group of friends who decided to develop this idea. We don’t have any fancy titles or professional labels — we’re just doing what we enjoy and growing together.</p>
+								<p><b>What’s Next</b></p>
+								<p>We have ideas and plans for the future, and we’re not stopping here. WiraProject will keep growing, and we’ll continue creating, learning, and sharing our results with the world.</p>
+							</article>
+
+						<!-- Work -->
+							<article id="copyright">
+								<h2 class="major">Rights And Terms</h2>
+								<p>All projects created by WiraProject participants may be protected by WiraProject's intellectual property rights under the following conditions:</p>
+								<p>The project was developed by one or more participants of the WiraProject team.<br>The project explicitly states that it is protected by WiraProject's intellectual property rights.</p>
+								<p>If the project does not explicitly state that it is protected by WiraProject's intellectual property rights, then the project remains the exclusive property of its creator, and the rights to its use and distribution belong solely to the author.</p>
+								<p>Projects that are explicitly marked as protected by WiraProject's intellectual property rights are protected by the team against unauthorized use, copying, modification, or distribution. This applies to both commercial and non-commercial use. Any use of such works, as well as their adaptation or distribution, is only allowed with permission from the WiraProject team.</p>
+								<p>If a project belongs to an individual participant of the WiraProject team, and the protection of rights on the work is stated as individual, all questions regarding the use or modification of this project should be addressed directly to the author of the project.</p>
+							</article>
+						<article id="contact">
+								<h2 class="major">Contact</h2>
+								<form id="contact-form">
+									<div class="fields">
+										<div class="field half">
+											<label for="name">Name</label>
+											<input type="text" name="name" id="name" required />
+										</div>
+										<div class="field half">
+											<label for="email">Email</label>
+											<input type="email" name="email" id="email" required />
+										</div>
+										<div class="field">
+											<label for="message">Message</label>
+											<textarea name="message" id="message" rows="4" required></textarea>
+										</div>
+									</div>
+									<ul class="actions">
+										<li><button type="submit" class="primary">Send Message</button></li>
+										<li><input type="reset" value="Reset" /></li>
+									</ul>
+								</form>
+							<div id="form-status" style="margin-top: 10px;"></div>
+							<script>
+								document.getElementById('contact-form').addEventListener('submit', async function (event) {
+									event.preventDefault();
+									const form = event.target;
+									const formData = new FormData(form);
+									try {
+										const response = await fetch('https://formspree.io/f/xzzdbonl', {
+											method: 'POST',
+											body: formData,
+											headers: {
+												'Accept': 'application/json',
+											},
+										});
+										if (response.ok) {
+											document.getElementById('form-status').textContent = 'Your message was sent successfully!';
+											form.reset();
+										} else {
+											document.getElementById('form-status').textContent = 'Failed to send your message. Please try again.';
+										}
+									} catch (error) {
+										document.getElementById('form-status').textContent = 'An error occurred. Please try again later.';
+										console.error('Error:', error);
+									}
+								});
+							</script>
+						</article>
+					</div>
+				<footer id="footer">
+					<p class="copyright">&copy; WiraProject. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+				</footer>
+			</div>
+		<div id="bg"></div>
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+	</body>
+</html>
